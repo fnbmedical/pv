@@ -1,0 +1,11 @@
+#!/bin/sh -e
+
+/store/app/start_regionserver.sh
+ntpdate -b 139.129.229.15
+hwclock --systohc
+
+/sbin/ntpd
+
+
+
+

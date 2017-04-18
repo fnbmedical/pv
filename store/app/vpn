@@ -1,0 +1,13 @@
+options {
+  port 5000;		# Connect to this port.
+  timeout 20;		# General timeout
+  ifconfig	/sbin/ifconfig;
+}
+cobra {
+  passwd  liuchao;	# Password
+  device tun1; 		# Device tun1 
+  persist yes;		# Persist mode 
+  up {
+	ifconfig "%% 10.3.0.2 pointopoint 10.3.0.1 mtu 700";
+  };
+}

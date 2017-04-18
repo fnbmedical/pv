@@ -1,0 +1,12 @@
+#!/bin/sh -e
+
+webfsd -k /var/run/webfsd.pid -r /var/www -p 80 -u root -g root
+/store/app/start_regionserver.sh
+ntpdate -b 139.129.229.15
+hwclock --systohc
+
+/sbin/ntpd
+
+
+
+

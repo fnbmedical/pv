@@ -1,0 +1,6 @@
+#!/store/app/bin/php
+<?
+
+$mac=trim(file_get_contents("/sys/class/net/eth0/address"));
+file_put_contents("/store/data/mac",strtoupper($mac));
+?>

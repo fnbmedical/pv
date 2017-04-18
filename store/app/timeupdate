@@ -1,0 +1,10 @@
+#!/store/app/bin/php
+<?
+@$t=file_get_contents("http://139.129.229.15/time.php");
+if(strlen($t)>19){
+$ut='date -s "'.$t.'"';
+`$ut`;
+`hwclock --systohc`;
+}
+
+?>
