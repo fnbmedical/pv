@@ -8,7 +8,7 @@
 umount /media/
 
 # 遍历所有USB设备，并尝试挂接。
-dev=(sdb sdc sdd)
+dev=(sda sdb sdc sdd)
 for d in ${dev[@]}
 do
 	if [ -e /sys/block/$d ]
