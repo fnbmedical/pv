@@ -15,6 +15,7 @@ function detect_encoding($file) {
 }
 
 $dir = "/store/data/contents/";
+//$dir = "./con/";
 // Open a known directory, and proceed to read its contents
 if (is_dir($dir)) {
 	if ($dh = opendir($dir)) {
@@ -55,10 +56,17 @@ if (is_dir($dir)) {
 					{
 						$value->setAttribute("font",",39");
 					}
+					if($value->getAttribute("movespeed")=="3")
+					{
+						$value->setAttribute("movespeed","4");
+					}
 				}
-
-				$xml_doc->encoding = detect_encoding($filepath);
-				$xml_doc->save($filepath);
+				if((1 != $height) or (1 != $width)){
+					$xml_doc->encoding = detect_encoding($filepath);
+					$xml_doc->save($filepath);
+				}else{
+					echo "ok";
+				}
 			}
 		} closedir($dh);
 	}
