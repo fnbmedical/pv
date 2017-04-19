@@ -4,7 +4,8 @@
 # Copyright(C) 2010 Kazo Vision (http://www.kazovision.com)
 
 # mplayer的返回信息中会包含 ID_LENGTH=15.36 这样的信息，就是视频的时间长度。
-videolength=`mplayer -identify -nosound -vc dummy -vo null "$1" 2>/dev/null | grep 'ID_LENGTH' | sed 's/.*=//'`
+#videolength=`mplayer -identify -nosound -vc dummy -vo null "$1" 2>/dev/null | grep 'ID_LENGTH' | sed 's/.*=//'`
+videolength=`/store/app/bin/mp2 -identify -nosound -vc dummy -vo null "$1" 2>/dev/null | grep 'ID_LENGTH' | sed 's/.*=//'`
 
 if [ $? -ne 0 ]
 then
